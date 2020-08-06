@@ -2,7 +2,7 @@ package com.github.perschola;
 
 public class Part2A implements Runnable {
     public static void main(String[] args) {
-        Runnable task = new MyObject();
+        Runnable task = new Part2A();
         Thread thread0 = new Thread(task);
         Thread thread1 = new Thread(task);
 
