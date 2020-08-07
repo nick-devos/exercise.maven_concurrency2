@@ -7,9 +7,8 @@ public class Part3 implements Runnable {
         Thread thread1 = new Thread(task, "Fred the Thread, II");
         Thread thread2 = new Thread(task, "Fred the Thread, III");
 
-        System.out.println(thread0.getName());
-        thread0.start();
 
+        thread0.start();
 
         try {
             thread0.join();
@@ -17,8 +16,6 @@ public class Part3 implements Runnable {
             throw new RuntimeException(e);
         }
 
-        System.out.println(thread1.getName());
-        System.out.println(thread2.getName());
         thread1.start();
         thread2.start();
     }
@@ -32,7 +29,7 @@ public class Part3 implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException("Sleep interrupted");
             }
-            System.out.println(i);
+            System.out.println(Thread.currentThread().getName() + ": " + i);
         }
     }
 }
