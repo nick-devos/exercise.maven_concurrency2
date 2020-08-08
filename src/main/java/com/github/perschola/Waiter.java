@@ -12,8 +12,8 @@ public class Waiter implements Runnable {
     public void run() {
         name = Thread.currentThread().getName();
         synchronized (msg) {
-            System.out.println(name + " waiting to get notified at time: " + System.currentTimeMillis());
             try {
+                System.out.println(name + " waiting to get notified at time: " + System.currentTimeMillis());
                 msg.wait();
             } catch (InterruptedException e) {
                 throw new RuntimeException("Wait interrupted");
